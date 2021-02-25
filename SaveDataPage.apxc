@@ -1,0 +1,12 @@
+public class PDFpages {
+    private String sortOrder = 'FIO';
+    public List<Driver__c> getdrivers() {
+    List<Driver__c> results = Database.query(
+        'SELECT Id__c, FIO__c, Order__c, Expire__c' +
+        'FROM Driver__c ' +
+        'ORDER BY ' + sortOrder + ' ASC ' +
+        'LIMIT 10'
+    );
+    return results;
+}
+}

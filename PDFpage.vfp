@@ -1,0 +1,12 @@
+<apex:page controller="PDFpages" renderAs="pdf">
+    <apex:form>
+        <apex:pageBlock title="Drivers List" id="drivers_list">
+            <apex:pageBlockTable value="{! drivers }" var="dr">
+                <apex:column value="{! dr.Id__c }"/>
+                <apex:column value="{! dr.FIO__c }"/>
+                <apex:column value="{! dr.Order__c }"/>
+                <apex:column value="{! ct.Expire__c }"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
