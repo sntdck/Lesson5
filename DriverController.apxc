@@ -1,0 +1,17 @@
+public class DriverController {
+    public String Id {get; set;}
+    public String driverName {get; set;}
+    public String driverOrder {get; set;}
+    public String Expirience {get; set;}
+    public String Salary {get; set;}
+    
+    public DriverController() {
+        Driver__c driver = [Select Id__c, FIO__c, Order__c, Expire__c, 
+                            Salary__c From Driver__c];
+        Id = String.valueOf(driver.Id__c);
+        driverName = driver.FIO__c;
+        driverOrder = driver.Order__c;
+        Expirience = String.valueOf(driver.Expire__c);
+        Salary = String.valueOf(driver.Salary__c);
+    }
+}
